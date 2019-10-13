@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fluttertinity',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       onGenerateRoute: RouterManager.generateRoute,
-      home: UsersPage(title: ''),
+      initialRoute: RouterManager.homePageRoute,
     );
   }
 }

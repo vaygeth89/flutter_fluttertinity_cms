@@ -40,7 +40,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   getDrawerListTile(
                       title: "Manage Users",
                       leading: Icon(
-                        Icons.home,
+                        Icons.person,
                         color: Colors.black,
                       ),
                       backgroundCollor: Colors.blue[100],

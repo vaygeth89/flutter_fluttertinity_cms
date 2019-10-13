@@ -32,10 +32,10 @@ class _UsersPageState extends State<UsersPage> {
         title: Text("Fluttertinity"),
       ),
       body: SafeArea(
-              child: FutureBuilder(
+        child: FutureBuilder(
             future: userRestful.getUsers(),
-            builder:
-                (BuildContext context, AsyncSnapshot<List<User>> usersSnapshot) {
+            builder: (BuildContext context,
+                AsyncSnapshot<List<User>> usersSnapshot) {
               if (usersSnapshot.connectionState == ConnectionState.done &&
                   usersSnapshot.hasData) {
                 return ListView.builder(
@@ -63,9 +63,17 @@ class _UsersPageState extends State<UsersPage> {
                       ),
                       child: ListTile(
                         leading: Text(usersSnapshot.data[index].id.toString()),
-                        title: Text(usersSnapshot.data[index].name),
-                        subtitle: Text(usersSnapshot.data[index].email),
-                        trailing: Icon(Icons.arrow_forward_ios),
+                        title: Text(
+                          usersSnapshot.data[index].name,
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700),
+                        ),
+                        subtitle: Text(
+                          usersSnapshot.data[index].email,
+                          style: TextStyle(color: Colors.indigo),
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios,size: 18,color: Colors.grey[400],),
                         onTap: () {
                           Navigator.of(context).pushNamed(
                               RouterManager.editUserPageRoute,

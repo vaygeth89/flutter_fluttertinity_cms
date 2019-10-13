@@ -11,7 +11,7 @@ class RouterManager {
     switch (settings.name) {
       case homePageRoute:
         {
-          return MaterialPageRoute(builder: (_) => UsersPage());
+          return MaterialPageRoute(builder: (_) => HomePage(title: "Home",));
         }
       case usersPageRoute:
         {

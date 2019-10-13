@@ -53,12 +53,18 @@ class _EditUserPageState extends State<EditUserPage> {
                   TextField(
                     controller: nameController,
                     focusNode: nameFocusNode,
-                    decoration: InputDecoration(labelText: "Name"),
+                    decoration: InputDecoration(
+                        labelText: "Name",
+                        labelStyle:
+                            TextStyle(color: Colors.indigo, fontSize: 15)),
                   ),
                   TextField(
                     controller: emailController,
                     focusNode: emailFocusNode,
-                    decoration: InputDecoration(labelText: "Email"),
+                    decoration: InputDecoration(
+                        labelText: "Email",
+                        labelStyle:
+                            TextStyle(color: Colors.indigo, fontSize: 15)),
                   ),
                 ],
               ),
@@ -73,14 +79,14 @@ class _EditUserPageState extends State<EditUserPage> {
           User user;
 
           if (widget.arguments.isNewUser) {
+            user = User(name: nameController.text, email: emailController.text);
+            userRestWebservice.createUser(user);
+          } else {
             user = User(
-                
+                id: widget.arguments.user.id,
                 name: nameController.text,
                 email: emailController.text);
-             userRestWebservice.createUser(user);
-          } else {
-            user = User(id: widget.arguments.user.id,name: nameController.text, email: emailController.text);
-             userRestWebservice.updateUser(user);
+            userRestWebservice.updateUser(user);
           }
           Navigator.of(context)
               .pushReplacementNamed(RouterManager.usersPageRoute);
