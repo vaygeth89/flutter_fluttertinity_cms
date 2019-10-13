@@ -83,7 +83,7 @@ class _EditUserPageState extends State<EditUserPage> {
              userRestWebservice.updateUser(user);
           }
           Navigator.of(context)
-              .pushReplacementNamed(RouterManager.homePageRoute);
+              .pushReplacementNamed(RouterManager.usersPageRoute);
         },
       ),
     );

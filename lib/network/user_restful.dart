@@ -33,7 +33,7 @@ class UserRestWebservice extends BaseRestAPI {
       users.forEach((user) async {
         http.Response response = await this
             .deleteRequest(resourcePath + childUrl + user.id.toString());
-
+        
         if (response.statusCode == 200 ||
             response.statusCode == 201 ||
             response.statusCode == 201) deletedRecord++;

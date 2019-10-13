@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertinity/widget/edit_user_page.dart';
-import 'package:fluttertinity/widget/home_screen.dart';
+import 'package:fluttertinity/widget/home_page.dart';
+import 'package:fluttertinity/widget/users_page.dart';
 
 class RouterManager {
   static const String homePageRoute = '/';
+  static const String usersPageRoute = '/user';
   static const String editUserPageRoute = '/edit';
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homePageRoute:
         {
-          return MaterialPageRoute(builder: (_) => MyHomePage());
+          return MaterialPageRoute(builder: (_) => UsersPage());
+        }
+      case usersPageRoute:
+        {
+          return MaterialPageRoute(builder: (_) => UsersPage());
         }
       case editUserPageRoute:
         {
@@ -20,7 +26,7 @@ class RouterManager {
 
       default:
         {
-          return MaterialPageRoute(builder: (_) => MyHomePage());
+          return MaterialPageRoute(builder: (_) => HomePage(title: "Home",));
         }
     }
   }

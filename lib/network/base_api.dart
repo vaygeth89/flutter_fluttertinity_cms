@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-abstract class BaseRestAPI {
+class BaseRestAPI {
   final String dns = "https://jsonplaceholder.typicode.com";
 
   Future<http.Response> getRequest({

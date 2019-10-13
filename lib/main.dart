@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertinity/widget/home_screen.dart';
+
+import 'package:fluttertinity/widget/users_page.dart';
 
 import 'router.dart';
 
@@ -9,12 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fluttertinity',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: RouterManager.generateRoute,
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: UsersPage(title: ''),
     );
   }
 }
