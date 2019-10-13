@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertinity/edit_user_page.dart';
-import 'package:fluttertinity/main.dart';
+import 'package:fluttertinity/widget/edit_user_page.dart';
+import 'package:fluttertinity/widget/home_screen.dart';
 
 class RouterManager {
   static const String homePageRoute = '/';
