@@ -38,17 +38,30 @@ class _AppDrawerState extends State<AppDrawer> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   getDrawerListTile(
+                      title: "Home",
+                      leading: Icon(
+                        Icons.dashboard,
+                        color: Colors.black,
+                        size: 25,
+                      ),
+                      backgroundCollor: Colors.blue[100],
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(RouterManager.homePageRoute);
+                      }),
+                  menuDivider,
+                  getDrawerListTile(
                       title: "Manage Users",
                       leading: Icon(
                         Icons.person,
                         color: Colors.black,
+                        size: 25,
                       ),
                       backgroundCollor: Colors.blue[100],
                       onTap: () {
                         Navigator.of(context)
                             .pushNamed(RouterManager.usersPageRoute);
                       }),
-                  menuDivider,
                 ],
               ),
             )
@@ -64,14 +77,14 @@ class _AppDrawerState extends State<AppDrawer> {
       Icon leading,
       Function onTap}) {
     return Material(
-      color: backgroundCollor,
+      // color: backgroundCollor,
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: ListTile(
           enabled: true,
           leading: leading,
           title: Text(
-            title,
+            title,style: TextStyle(fontFamily: 'Roboto',fontSize: 22),
           ),
           onTap: () {
             onTap();
